@@ -20,6 +20,9 @@ func _physics_process(delta):
 	
 	_set_animation()
 		
+#	if Input.is_action_pressed("debug"):
+#		get_node(sombra_platforms/Area2D/CollisionShape2D).disabled = true
+		
 
 func _get_input():
 	var move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
