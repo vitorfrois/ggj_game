@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=2]
 
-[ext_resource path="res://scripts/fallzone1.gd" type="Script" id=1]
-[ext_resource path="res://scripts/exit2.gd" type="Script" id=2]
+[ext_resource path="res://scripts/fallzone3.gd" type="Script" id=1]
+[ext_resource path="res://scripts/exit1.gd" type="Script" id=2]
 [ext_resource path="res://scripts/alma.gd" type="Script" id=3]
 [ext_resource path="res://scripts/audio.gd" type="Script" id=4]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0001.png" type="Texture" id=5]
@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/background/castle.png" type="Texture" id=7]
 [ext_resource path="res://audio/track2.wav" type="AudioStream" id=8]
 [ext_resource path="res://audio/short wind sound cut.wav" type="AudioStream" id=9]
-[ext_resource path="res://assets/walls_platforms/Plataforma_neutra.png" type="Texture" id=10]
+[ext_resource path="res://assets/walls_platforms/Parede_neutra.png" type="Texture" id=10]
 [ext_resource path="res://assets/walls_platforms/Plataforma_luz.png" type="Texture" id=11]
 [ext_resource path="res://assets/alma/Andar_luz/frame0000.png" type="Texture" id=14]
 [ext_resource path="res://assets/alma/almaLuz.png" type="Texture" id=16]
@@ -236,9 +236,6 @@ tracks/2/keys = {
 radius = 16.0
 height = 76.0
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 168.5, 35.25 )
-
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64, 8 )
 
@@ -246,16 +243,18 @@ extents = Vector2( 64, 8 )
 extents = Vector2( 17, 442.5 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 368, 26.5 )
+extents = Vector2( 552, 26.5 )
 
-[sub_resource type="CapsuleShape2D" id=13]
-radius = 32.0
-height = 32.0
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 30.5, 61 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 61, 182.5 )
 
 [node name="Level_1" type="Node2D"]
 
 [node name="alma" type="KinematicBody2D" parent="."]
-position = Vector2( -224, 16 )
+position = Vector2( -224, 0 )
 z_index = 1
 collision_mask = 6
 script = ExtResource( 3 )
@@ -294,49 +293,11 @@ shape = SubResource( 9 )
 stream = ExtResource( 9 )
 volume_db = -18.109
 
-[node name="floor" type="StaticBody2D" parent="."]
-collision_layer = 4
-
-[node name="floor" type="CollisionShape2D" parent="floor"]
-position = Vector2( 167.5, 563.25 )
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="floor"]
-position = Vector2( 168, 544 )
-scale = Vector2( 2.625, 1 )
-texture = ExtResource( 10 )
-
 [node name="luz_platforms" type="Node2D" parent="."]
 position = Vector2( -64, 0 )
 
-[node name="platL3" type="StaticBody2D" parent="luz_platforms"]
-position = Vector2( 496, -256 )
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL3"]
-position = Vector2( 400, 456 )
-shape = SubResource( 10 )
-one_way_collision = true
-
-[node name="Sprite" type="Sprite" parent="luz_platforms/platL3"]
-position = Vector2( 400, 464 )
-texture = ExtResource( 11 )
-
-[node name="platL2" type="StaticBody2D" parent="luz_platforms"]
-position = Vector2( 240, -128 )
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL2"]
-position = Vector2( 400, 456 )
-shape = SubResource( 10 )
-one_way_collision = true
-
-[node name="Sprite" type="Sprite" parent="luz_platforms/platL2"]
-position = Vector2( 400, 464 )
-texture = ExtResource( 11 )
-
 [node name="platL1" type="StaticBody2D" parent="luz_platforms"]
-position = Vector2( -16, 0 )
+position = Vector2( -272, 64 )
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL1"]
@@ -348,11 +309,76 @@ one_way_collision = true
 position = Vector2( 400, 464 )
 texture = ExtResource( 11 )
 
+[node name="platL2" type="StaticBody2D" parent="luz_platforms"]
+position = Vector2( 240, 0 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL2"]
+position = Vector2( 400, 456 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="luz_platforms/platL2"]
+position = Vector2( 400, 464 )
+texture = ExtResource( 11 )
+
+[node name="platL3" type="StaticBody2D" parent="luz_platforms"]
+position = Vector2( 240, -192 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL3"]
+position = Vector2( 400, 456 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="luz_platforms/platL3"]
+position = Vector2( 400, 464 )
+texture = ExtResource( 11 )
+
+[node name="platL4" type="StaticBody2D" parent="luz_platforms"]
+position = Vector2( -144, -64 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL4"]
+position = Vector2( 400, 456 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="luz_platforms/platL4"]
+position = Vector2( 400, 464 )
+texture = ExtResource( 11 )
+
+[node name="platL5" type="StaticBody2D" parent="luz_platforms"]
+position = Vector2( -272, -128 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL5"]
+position = Vector2( 400, 456 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="luz_platforms/platL5"]
+position = Vector2( 400, 464 )
+texture = ExtResource( 11 )
+
+[node name="platL6" type="StaticBody2D" parent="luz_platforms"]
+position = Vector2( 496, 64 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL6"]
+position = Vector2( 400, 456 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="luz_platforms/platL6"]
+position = Vector2( 400, 464 )
+texture = ExtResource( 11 )
+
 [node name="sombra_platforms" type="Node2D" parent="."]
 position = Vector2( -64, 0 )
 
 [node name="plat1" type="StaticBody2D" parent="sombra_platforms"]
-position = Vector2( 112, -64 )
+position = Vector2( -16, 64 )
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat1"]
@@ -365,7 +391,7 @@ position = Vector2( 400, 464 )
 texture = ExtResource( 6 )
 
 [node name="plat2" type="StaticBody2D" parent="sombra_platforms"]
-position = Vector2( 624, -320 )
+position = Vector2( 240, 64 )
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat2"]
@@ -378,6 +404,7 @@ position = Vector2( 400, 464 )
 texture = ExtResource( 6 )
 
 [node name="plat3" type="StaticBody2D" parent="sombra_platforms"]
+position = Vector2( -256, 128 )
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat3"]
@@ -386,6 +413,58 @@ shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="Sprite" type="Sprite" parent="sombra_platforms/plat3"]
+position = Vector2( 768, 272 )
+texture = ExtResource( 6 )
+
+[node name="plat4" type="StaticBody2D" parent="sombra_platforms"]
+position = Vector2( -640, 0 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat4"]
+position = Vector2( 768, 264 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="sombra_platforms/plat4"]
+position = Vector2( 768, 272 )
+texture = ExtResource( 6 )
+
+[node name="plat5" type="StaticBody2D" parent="sombra_platforms"]
+position = Vector2( -256, 0 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat5"]
+position = Vector2( 768, 264 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="sombra_platforms/plat5"]
+position = Vector2( 768, 272 )
+texture = ExtResource( 6 )
+
+[node name="plat6" type="StaticBody2D" parent="sombra_platforms"]
+position = Vector2( -384, 0 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat6"]
+position = Vector2( 768, 264 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="sombra_platforms/plat6"]
+position = Vector2( 768, 272 )
+texture = ExtResource( 6 )
+
+[node name="plat7" type="StaticBody2D" parent="sombra_platforms"]
+position = Vector2( 128, 0 )
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat7"]
+position = Vector2( 768, 264 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="sombra_platforms/plat7"]
 position = Vector2( 768, 272 )
 texture = ExtResource( 6 )
 
@@ -407,24 +486,24 @@ collision_layer = 4
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fallzone"]
-position = Vector2( 144, 960 )
+position = Vector2( -8, 960 )
 shape = SubResource( 12 )
 
-[node name="Porta" type="Area2D" parent="."]
-position = Vector2( 864, 96 )
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -112, 384 )
 script = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta"]
-position = Vector2( 128, -16 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1041.5, 64 )
 shape = SubResource( 13 )
 
-[node name="Sprite" type="Sprite" parent="Porta"]
-position = Vector2( 128, -16 )
+[node name="Saída" type="Sprite" parent="Area2D"]
+position = Vector2( 1024, 80 )
 scale = Vector2( 0.581818, 0.6 )
 texture = ExtResource( 23 )
 
 [node name="Entrada" type="Sprite" parent="."]
-position = Vector2( 32, 480 )
+position = Vector2( 32, 464 )
 scale = Vector2( 0.581818, 0.6 )
 texture = ExtResource( 23 )
 
@@ -433,5 +512,23 @@ z_index = -100
 texture = ExtResource( 7 )
 centered = false
 
-[connection signal="body_shape_entered" from="fallzone" to="fallzone" method="_on_fallzone_body_shape_entered"]
-[connection signal="body_shape_entered" from="Porta" to="Porta" method="_on_Porta_body_shape_entered"]
+[node name="neutralColumns" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="neutralColumns"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="neutralColumns/StaticBody2D"]
+position = Vector2( 704, 441.5 )
+shape = SubResource( 14 )
+
+[node name="Sprite" type="Sprite" parent="neutralColumns/StaticBody2D"]
+position = Vector2( 672, 440 )
+scale = Vector2( 1, 2.875 )
+texture = ExtResource( 10 )
+
+[node name="Sprite2" type="Sprite" parent="neutralColumns/StaticBody2D"]
+position = Vector2( 736, 440 )
+scale = Vector2( 1, 2.875 )
+texture = ExtResource( 10 )
+
+[connection signal="body_shape_entered" from="fallzone" to="alma" method="_on_fallzone_body_shape_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_shape_entered"]
