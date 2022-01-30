@@ -17,14 +17,10 @@ func _ready():
 
 
 func _on_Start_pressed():
-<<<<<<< HEAD
 	$"Sound Select".play()
 	yield($"Sound Select", "finished")
-	get_tree().change_scene("res://levels/Level_S0.tscn")
-	
-=======
 	get_tree().change_scene("res://levels/Level_0.tscn")
->>>>>>> 7c3e0ca956bd06e7b2b53160e076b8d6dda41fd4
+	
 
 func _on_Credits_pressed():
 	get_tree().change_scene("res://levels/Credits.tscn")

@@ -1,19 +1,11 @@
-<<<<<<< HEAD
 [gd_scene load_steps=10 format=2]
-=======
-[gd_scene load_steps=8 format=2]
->>>>>>> 7c3e0ca956bd06e7b2b53160e076b8d6dda41fd4
 
 [ext_resource path="res://levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/background/forest/Preview/Background.png" type="Texture" id=2]
 [ext_resource path="res://font/PressStart2P-vaV7.ttf" type="DynamicFontData" id=3]
-<<<<<<< HEAD
-[ext_resource path="res://audio/track1.wav" type="AudioStream" id=4]
+[ext_resource path="res://font/AncientModernTales-a7Po.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://audio/Menu Selection Click.wav" type="AudioStream" id=5]
 [ext_resource path="res://audio/vgmenuhighlight.wav" type="AudioStream" id=8]
-=======
-[ext_resource path="res://font/AncientModernTales-a7Po.ttf" type="DynamicFontData" id=4]
->>>>>>> 7c3e0ca956bd06e7b2b53160e076b8d6dda41fd4
 
 [sub_resource type="DynamicFont" id=3]
 size = 120
@@ -36,7 +28,6 @@ __meta__ = {
 }
 
 [node name="Music Menu" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 4 )
 volume_db = -12.0
 
 [node name="BgForest1" type="TextureRect" parent="."]
@@ -101,14 +92,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-<<<<<<< HEAD
 [node name="Sound Hover" type="AudioStreamPlayer" parent="VBoxContainer/Start"]
 stream = ExtResource( 5 )
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
-=======
 [node name="Credits" type="Button" parent="VBoxContainer"]
->>>>>>> 7c3e0ca956bd06e7b2b53160e076b8d6dda41fd4
 margin_top = 18.0
 margin_right = 68.0
 margin_bottom = 32.0
