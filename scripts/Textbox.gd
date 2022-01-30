@@ -40,6 +40,7 @@ func _process(delta):
 				change_state(State.FINISHED)
 		State.FINISHED:
 			if Input.is_action_just_pressed("ui_accept"):
+				$"Sound Select".play()
 				change_state(State.READY)
 				hide_textbox()
 

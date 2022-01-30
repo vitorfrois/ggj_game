@@ -15,7 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
 func _on_Start_pressed():
 	$"Sound Select".play()
 	yield($"Sound Select", "finished")
@@ -23,6 +22,8 @@ func _on_Start_pressed():
 	
 
 func _on_Credits_pressed():
+	$"Sound Select".play()
+	yield($"Sound Select", "finished")
 	get_tree().change_scene("res://levels/Credits.tscn")
 
 func _on_Quit_pressed():
