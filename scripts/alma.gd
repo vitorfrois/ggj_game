@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 var velocity = Vector2()
 var move_speed = 160
-var gravity = 2000
-var jump_force = -650
+var gravity = 1500
+var jump_force = -500
 var is_grounded 
 onready var raycasts = $raycasts
 var mode = "luz"
@@ -14,12 +14,18 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("move_up") && _check_is_grounded():
 		velocity.y = jump_force 
 	
+	if _check_is_grounded():
+		gravity = 0
+	else:
+		gravity = 1500
+	
 	_get_input()
 	
 	move_and_slide(velocity)
 	
 	_set_animation()
 		
+	
 #	if Input.is_action_pressed("debug"):
 #		get_node(sombra_platforms/Area2D/CollisionShape2D).disabled = true
 		
