@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://levels/Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/background/forest/Preview/Background.png" type="Texture" id=2]
+[ext_resource path="res://font/PressStart2P-vaV7.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 8
+font_data = ExtResource( 3 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BgForest1" type="TextureRect" parent="."]
+margin_left = 517.0
+margin_top = -193.0
+margin_right = 1445.0
+margin_bottom = 600.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BgForest2" type="TextureRect" parent="."]
+margin_left = -411.0
+margin_top = -193.0
+margin_right = 517.0
+margin_bottom = 600.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -400.0
+margin_top = 128.0
+margin_right = 432.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 3 )
+text = "Nome do Jogo!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -96.0
+margin_top = 31.0
+margin_right = -44.0
+margin_bottom = 75.0
+rect_scale = Vector2( 3.82232, 3.48232 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+margin_right = 52.0
+margin_bottom = 14.0
+focus_neighbour_top = NodePath("../Quit")
+custom_colors/font_color_focus = Color( 1, 1, 0.25098, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Start"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 52.0
+margin_bottom = 32.0
+focus_neighbour_bottom = NodePath("../Start")
+custom_colors/font_color_focus = Color( 1, 1, 0.25098, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Quit"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
