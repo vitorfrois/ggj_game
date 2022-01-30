@@ -240,6 +240,9 @@ extents = Vector2( 512.5, 31.5 )
 [sub_resource type="RectangleShape2D" id=10]
 extents = Vector2( 64, 8 )
 
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 17, 442.5 )
+
 [node name="Level_L0" type="Node2D"]
 
 [node name="alma" type="KinematicBody2D" parent="."]
@@ -415,3 +418,9 @@ one_way_collision = true
 [node name="Sprite" type="Sprite" parent="sombra_platforms/platS1"]
 position = Vector2( 400, 464 )
 texture = ExtResource( 17 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -17, 156 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 11 )
