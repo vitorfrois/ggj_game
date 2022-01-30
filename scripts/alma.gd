@@ -45,9 +45,15 @@ func _physics_process(delta):
 func _get_input():
 	var move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	velocity.x = lerp(velocity.x, move_speed * move_direction, 0.2)
+	
+	
+	if Input.is_action_just_pressed("move_left") or Input.is_action_just_pressed("move_right") or Input.is_action_just_pressed("move_up"):
+		$"movement sound".play()
+
 
 	if move_direction != 0:
 		$Sprite.scale.x = move_direction * 0.15
+		
 	
 	if Input.is_action_just_pressed("changeMode"):
 		modebool = !modebool
