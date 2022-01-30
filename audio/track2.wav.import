@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/track2.wav-a8a8870d8163d5700ce7641639ef0a24.sample"
+
+[deps]
+
+source_file="res://audio/track2.wav"
+dest_files=[ "res://.import/track2.wav-a8a8870d8163d5700ce7641639ef0a24.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
