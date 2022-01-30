@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://levels/Menu.gd" type="Script" id=1]
-[ext_resource path="res://assets/background/forest/Preview/Background.png" type="Texture" id=2]
+[ext_resource path="res://assets/background/black.jpg" type="Texture" id=2]
 [ext_resource path="res://font/PressStart2P-vaV7.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://font/AncientModernTales-a7Po.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://audio/vgmenuhighlight.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=3]
-size = 120
+size = 180
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=1]
@@ -29,25 +29,18 @@ __meta__ = {
 [node name="Music Menu" type="AudioStreamPlayer" parent="."]
 volume_db = -12.0
 
-[node name="BgForest1" type="TextureRect" parent="."]
-margin_left = 517.0
-margin_top = -193.0
-margin_right = 1445.0
-margin_bottom = 600.0
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="BgForest2" type="TextureRect" parent="."]
 margin_left = -411.0
 margin_top = -193.0
 margin_right = 517.0
 margin_bottom = 600.0
-texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Black" type="Sprite" parent="BgForest2"]
+position = Vector2( 851, 627 )
+texture = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="."]
 anchor_left = 0.5
