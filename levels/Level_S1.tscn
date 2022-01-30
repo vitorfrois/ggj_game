@@ -1,0 +1,440 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0001_8.png" type="Texture" id=1]
+[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0002_7.png" type="Texture" id=2]
+[ext_resource path="res://assets/alma/Andar_sombra/frame0000.png" type="Texture" id=3]
+[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0006_4.png" type="Texture" id=4]
+[ext_resource path="res://assets/alma/Andar_sombra/frame0002.png" type="Texture" id=5]
+[ext_resource path="res://assets/alma/Andar_sombra/frame0001.png" type="Texture" id=6]
+[ext_resource path="res://assets/alma/almaLuz.png" type="Texture" id=7]
+[ext_resource path="res://assets/alma/almaSombra.png" type="Texture" id=8]
+[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0008_3.png" type="Texture" id=9]
+[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0010_1.png" type="Texture" id=10]
+[ext_resource path="res://audio/short wind sound cut.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/alma/Andar_luz/frame0000.png" type="Texture" id=12]
+[ext_resource path="res://assets/alma/Andar_luz/frame0002.png" type="Texture" id=13]
+[ext_resource path="res://assets/walls_platforms/Parede_neutra.png" type="Texture" id=14]
+[ext_resource path="res://assets/walls_platforms/Parede_luz.png" type="Texture" id=15]
+[ext_resource path="res://assets/alma/Andar_luz/frame0001.png" type="Texture" id=16]
+[ext_resource path="res://assets/walls_platforms/Parede_sombra.png" type="Texture" id=17]
+[ext_resource path="res://scripts/alma2.gd" type="Script" id=18]
+[ext_resource path="res://assets/walls_platforms/Plataforma_luz.png" type="Texture" id=19]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:texture:load_path")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ "res://.import/frame0000.png-254422a81f2716c6657203ffb7353857.stex" ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "luz"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "luz_walking"
+length = 0.6
+loop = true
+step = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.202939, 0.401074 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 13 ), ExtResource( 12 ), ExtResource( 16 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.201713, 0.400195 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.201713, 0.4022 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 1, 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "sombra"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "sombra_walking"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 3 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 1, 1, 1 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 0 ]
+}
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 16.0
+height = 76.0
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 1127.5, 31.5 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 17, 442.5 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 32, 5 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 58, 9 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 35, 7.75 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 64, 14.25 )
+
+[node name="Level_L1" type="Node2D"]
+
+[node name="alma" type="KinematicBody2D" parent="."]
+position = Vector2( -224, 0 )
+z_index = 1
+collision_mask = 6
+script = ExtResource( 18 )
+
+[node name="Sprite" type="Sprite" parent="alma"]
+position = Vector2( 287, 447 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 7 )
+
+[node name="raycasts" type="Node2D" parent="alma"]
+
+[node name="raycast1" type="RayCast2D" parent="alma/raycasts"]
+position = Vector2( 272, 496 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 4
+
+[node name="raycast2" type="RayCast2D" parent="alma/raycasts"]
+position = Vector2( 304, 496 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 4
+
+[node name="animation" type="AnimationPlayer" parent="alma"]
+anims/RESET = SubResource( 1 )
+anims/luz = SubResource( 2 )
+anims/luz_walking = SubResource( 3 )
+anims/sombra = SubResource( 4 )
+anims/sombra_walking = SubResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="alma"]
+position = Vector2( 288, 448 )
+shape = SubResource( 6 )
+
+[node name="movement sound" type="AudioStreamPlayer" parent="alma"]
+stream = ExtResource( 11 )
+volume_db = -5.0
+
+[node name="Camera2D" type="Camera2D" parent="alma"]
+position = Vector2( 287, 447 )
+current = true
+limit_left = 0
+limit_right = 100000000
+limit_bottom = 600
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="background" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2( 1.1, 1.1 )
+motion_scale = Vector2( 0.1, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/background"]
+position = Vector2( 0, 3.66816 )
+scale = Vector2( 1.10404, 1.01307 )
+texture = ExtResource( 10 )
+centered = false
+offset = Vector2( 0, -260 )
+
+[node name="trees1" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2( 1.1, 1.1 )
+motion_scale = Vector2( 0.3, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees1"]
+position = Vector2( 0, 3.75559 )
+scale = Vector2( 1.00313, 1.01341 )
+texture = ExtResource( 9 )
+centered = false
+offset = Vector2( 0, -260 )
+
+[node name="trees2" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2( 1.1, 1.1 )
+motion_scale = Vector2( 0.6, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees2"]
+position = Vector2( 0, 6.90574 )
+scale = Vector2( 1.15204, 1.01212 )
+texture = ExtResource( 4 )
+centered = false
+offset = Vector2( 0, -260 )
+
+[node name="trees3" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2( 1.1, 1.1 )
+motion_scale = Vector2( 0.9, 1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees3"]
+position = Vector2( 0, 3.75559 )
+scale = Vector2( 1.10404, 1.01341 )
+texture = ExtResource( 2 )
+centered = false
+offset = Vector2( 0, -260 )
+
+[node name="grass1" type="ParallaxLayer" parent="ParallaxBackground"]
+scale = Vector2( 1.1, 1.1 )
+motion_mirroring = Vector2( 1024, 0 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/grass1"]
+position = Vector2( 0, 3.75559 )
+scale = Vector2( 1.10208, 1.01341 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( 0, -260 )
+
+[node name="floor" type="StaticBody2D" parent="."]
+collision_layer = 4
+
+[node name="floor" type="CollisionShape2D" parent="floor"]
+position = Vector2( 1126.5, 567 )
+shape = SubResource( 7 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -17, 156 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="WallLuz" type="Node2D" parent="."]
+
+[node name="Wall1" type="StaticBody2D" parent="WallLuz"]
+
+[node name="ParedeLuz" type="Sprite" parent="WallLuz/Wall1"]
+position = Vector2( 292, 471 )
+texture = ExtResource( 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLuz/Wall1"]
+position = Vector2( 292, 412 )
+shape = SubResource( 9 )
+one_way_collision = true
+
+[node name="WallNeutra" type="Node2D" parent="."]
+position = Vector2( 488, 340.25 )
+
+[node name="Wall1" type="StaticBody2D" parent="WallNeutra"]
+position = Vector2( -488, -340.25 )
+
+[node name="ParedeNeutra" type="Sprite" parent="WallNeutra/Wall1"]
+position = Vector2( 746, 398 )
+scale = Vector2( 1.8125, 2.17969 )
+texture = ExtResource( 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallNeutra/Wall1"]
+position = Vector2( 746, 267 )
+shape = SubResource( 11 )
+one_way_collision = true
+
+[node name="WallSombra" type="Node2D" parent="."]
+
+[node name="Wall1" type="StaticBody2D" parent="WallSombra"]
+
+[node name="ParedeSombra" type="Sprite" parent="WallSombra/Wall1"]
+position = Vector2( 488, 435 )
+scale = Vector2( 1.09375, 1.59375 )
+texture = ExtResource( 17 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSombra/Wall1"]
+position = Vector2( 488, 340.25 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="luz_platforms" type="Node2D" parent="."]
+
+[node name="platS1" type="StaticBody2D" parent="luz_platforms"]
+
+[node name="PlataformaLuz" type="Sprite" parent="luz_platforms/platS1"]
+position = Vector2( 988, 334 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platS1"]
+position = Vector2( 988, 332.75 )
+shape = SubResource( 12 )
