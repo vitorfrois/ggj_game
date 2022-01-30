@@ -1,14 +1,10 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/alma/almaLuz.png" type="Texture" id=1]
 [ext_resource path="res://scripts/alma2.gd" type="Script" id=2]
 [ext_resource path="res://assets/walls_platforms/Parede_luz.png" type="Texture" id=3]
 [ext_resource path="res://assets/alma/almaSombra.png" type="Texture" id=4]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0008_3.png" type="Texture" id=5]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0010_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0001_8.png" type="Texture" id=7]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0002_7.png" type="Texture" id=8]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0006_4.png" type="Texture" id=9]
+[ext_resource path="res://assets/background/castle.png" type="Texture" id=5]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0000.png" type="Texture" id=10]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0002.png" type="Texture" id=11]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0001.png" type="Texture" id=12]
@@ -314,67 +310,6 @@ drag_margin_right = 0.3
 editor_draw_limits = true
 editor_draw_drag_margin = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="background" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_scale = Vector2( 0.1, 1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/background"]
-position = Vector2( 0, 3.66816 )
-scale = Vector2( 1.10404, 1.01307 )
-texture = ExtResource( 6 )
-centered = false
-offset = Vector2( 0, -260 )
-
-[node name="trees1" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees1"]
-position = Vector2( 0, 3.75559 )
-scale = Vector2( 1.00313, 1.01341 )
-texture = ExtResource( 5 )
-centered = false
-offset = Vector2( 0, -260 )
-
-[node name="trees2" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_scale = Vector2( 0.6, 1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees2"]
-position = Vector2( 0, 6.90574 )
-scale = Vector2( 1.15204, 1.01212 )
-texture = ExtResource( 9 )
-centered = false
-offset = Vector2( 0, -260 )
-
-[node name="trees3" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_scale = Vector2( 0.9, 1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees3"]
-position = Vector2( 0, 3.75559 )
-scale = Vector2( 1.10404, 1.01341 )
-texture = ExtResource( 8 )
-centered = false
-offset = Vector2( 0, -260 )
-
-[node name="grass1" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/grass1"]
-position = Vector2( 0, 3.75559 )
-scale = Vector2( 1.10208, 1.01341 )
-texture = ExtResource( 7 )
-centered = false
-offset = Vector2( 0, -260 )
-
 [node name="floor" type="StaticBody2D" parent="."]
 collision_layer = 4
 
@@ -462,5 +397,10 @@ shape = SubResource( 13 )
 position = Vector2( 128, -16 )
 scale = Vector2( 0.581818, 0.6 )
 texture = ExtResource( 17 )
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = -100
+texture = ExtResource( 5 )
+centered = false
 
 [connection signal="body_shape_entered" from="Porta" to="Porta" method="_on_Porta_body_shape_entered"]
