@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/alma/almaLuz.png" type="Texture" id=1]
 [ext_resource path="res://scripts/alma.gd" type="Script" id=2]
@@ -395,17 +395,6 @@ texture = ExtResource( 16 )
 
 [node name="sombra_platforms" type="Node2D" parent="."]
 
-[node name="Area2D" type="Area2D" parent="sombra_platforms"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/Area2D"]
-position = Vector2( 768, 264 )
-shape = SubResource( 10 )
-one_way_collision = true
-
-[node name="Sprite" type="Sprite" parent="sombra_platforms/Area2D"]
-position = Vector2( 768, 272 )
-texture = ExtResource( 17 )
-
 [node name="platS1" type="StaticBody2D" parent="sombra_platforms"]
 position = Vector2( 112, -64 )
 collision_layer = 4
@@ -417,6 +406,18 @@ one_way_collision = true
 
 [node name="Sprite" type="Sprite" parent="sombra_platforms/platS1"]
 position = Vector2( 400, 464 )
+texture = ExtResource( 17 )
+
+[node name="platS2" type="StaticBody2D" parent="sombra_platforms"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/platS2"]
+position = Vector2( 768, 264 )
+shape = SubResource( 10 )
+one_way_collision = true
+
+[node name="Sprite" type="Sprite" parent="sombra_platforms/platS2"]
+position = Vector2( 768, 272 )
 texture = ExtResource( 17 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

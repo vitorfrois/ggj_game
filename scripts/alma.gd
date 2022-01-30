@@ -7,6 +7,18 @@ var jump_force = -650
 var is_grounded 
 onready var raycasts = $raycasts
 var mode = "luz"
+var modebool = true
+
+func _ready():
+	var nodes_luz = get_node("../luz_platforms/").get_children()
+	for node in nodes_luz:
+		node.visible = modebool
+		node.get_node("CollisionShape2D").disabled = !modebool
+	
+	var nodes_sombra = get_node("../sombra_platforms/").get_children()
+	for node in nodes_sombra:
+		node.visible = !modebool
+		node.get_node("CollisionShape2D").disabled = modebool
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
@@ -30,6 +42,18 @@ func _get_input():
 
 	if move_direction != 0:
 		$Sprite.scale.x = move_direction * 0.15
+	
+	if Input.is_action_just_pressed("changeMode"):
+		modebool = !modebool
+		var nodes_luz = get_node("../luz_platforms/").get_children()
+		for node in nodes_luz:
+			node.visible = modebool
+			node.get_node("CollisionShape2D").disabled = !modebool
+		
+		var nodes_sombra = get_node("../sombra_platforms/").get_children()
+		for node in nodes_sombra:
+			node.visible = !modebool
+			node.get_node("CollisionShape2D").disabled = modebool
 
 func _check_is_grounded():
 	for raycast in raycasts.get_children():
