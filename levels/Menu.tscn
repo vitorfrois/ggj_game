@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/background/black.jpg" type="Texture" id=2]
 [ext_resource path="res://font/PressStart2P-vaV7.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://font/AncientModernTales-a7Po.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://audio/track1.wav" type="AudioStream" id=5]
 [ext_resource path="res://audio/vgmenuhighlight.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=3]
@@ -27,7 +28,8 @@ __meta__ = {
 }
 
 [node name="Music Menu" type="AudioStreamPlayer" parent="."]
-volume_db = -12.0
+stream = ExtResource( 5 )
+volume_db = -10.0
 
 [node name="BgForest2" type="TextureRect" parent="."]
 margin_left = -411.0

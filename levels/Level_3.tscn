@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://scripts/fallzone3-0.gd" type="Script" id=1]
 [ext_resource path="res://scripts/exit3.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://audio/short wind sound cut.wav" type="AudioStream" id=9]
 [ext_resource path="res://assets/walls_platforms/Parede_neutra.png" type="Texture" id=10]
 [ext_resource path="res://assets/walls_platforms/Plataforma_luz.png" type="Texture" id=11]
+[ext_resource path="res://audio/vgmenuhighlight.wav" type="AudioStream" id=12]
 [ext_resource path="res://assets/alma/Andar_luz/frame0000.png" type="Texture" id=14]
 [ext_resource path="res://assets/alma/almaLuz.png" type="Texture" id=16]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0000.png" type="Texture" id=17]
@@ -291,7 +292,7 @@ shape = SubResource( 9 )
 
 [node name="movement sound" type="AudioStreamPlayer2D" parent="alma"]
 stream = ExtResource( 9 )
-volume_db = -18.109
+volume_db = -5.0
 
 [node name="luz_platforms" type="Node2D" parent="."]
 position = Vector2( -64, 0 )
@@ -492,6 +493,10 @@ shape = SubResource( 13 )
 position = Vector2( 1024, 80 )
 scale = Vector2( 0.581818, 0.6 )
 texture = ExtResource( 23 )
+
+[node name="Sound Select" type="AudioStreamPlayer" parent="Area2D"]
+stream = ExtResource( 12 )
+volume_db = -10.0
 
 [node name="Entrada" type="Sprite" parent="."]
 position = Vector2( 32, 464 )
