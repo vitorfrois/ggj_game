@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://levels/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/background/forest/Preview/Background.png" type="Texture" id=2]
 [ext_resource path="res://font/PressStart2P-vaV7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://audio/track1.wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/Menu Selection Click.wav" type="AudioStream" id=5]
+[ext_resource path="res://audio/vgmenuhighlight.wav" type="AudioStream" id=8]
 
 [sub_resource type="DynamicFont" id=3]
 size = 64
@@ -23,6 +26,10 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Music Menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -12.0
 
 [node name="BgForest1" type="TextureRect" parent="."]
 margin_left = 517.0
@@ -85,6 +92,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Sound Hover" type="AudioStreamPlayer" parent="VBoxContainer/Start"]
+stream = ExtResource( 5 )
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 margin_top = 18.0
 margin_right = 52.0
@@ -94,6 +104,10 @@ custom_colors/font_color_focus = Color( 1, 1, 0.25098, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
 flat = true
+
+[node name="Sound Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -10.0
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
