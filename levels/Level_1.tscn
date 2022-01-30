@@ -1,29 +1,26 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://assets/alma/almaLuz.png" type="Texture" id=1]
-[ext_resource path="res://scripts/alma.gd" type="Script" id=2]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0000_9.png" type="Texture" id=3]
+[ext_resource path="res://scripts/alma2.gd" type="Script" id=2]
+[ext_resource path="res://assets/walls_platforms/Parede_luz.png" type="Texture" id=3]
 [ext_resource path="res://assets/alma/almaSombra.png" type="Texture" id=4]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0008_3.png" type="Texture" id=5]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0010_1.png" type="Texture" id=6]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0001_8.png" type="Texture" id=7]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0002_7.png" type="Texture" id=8]
-[ext_resource path="res://assets/background/forest/PNG/Background layers/Layer_0006_4.png" type="Texture" id=9]
+[ext_resource path="res://assets/background/castle.png" type="Texture" id=5]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0000.png" type="Texture" id=10]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0002.png" type="Texture" id=11]
 [ext_resource path="res://assets/alma/Andar_sombra/frame0001.png" type="Texture" id=12]
 [ext_resource path="res://assets/alma/Andar_luz/frame0002.png" type="Texture" id=13]
 [ext_resource path="res://assets/alma/Andar_luz/frame0000.png" type="Texture" id=14]
 [ext_resource path="res://assets/alma/Andar_luz/frame0001.png" type="Texture" id=15]
-[ext_resource path="res://assets/walls_platforms/Plataforma_luz.png" type="Texture" id=16]
-[ext_resource path="res://assets/walls_platforms/Plataforma_sombra.png" type="Texture" id=17]
+[ext_resource path="res://assets/walls_platforms/Parede_neutra.png" type="Texture" id=16]
+[ext_resource path="res://assets/porta.png" type="Texture" id=17]
 [ext_resource path="res://audio/short wind sound cut.wav" type="AudioStream" id=18]
 [ext_resource path="res://scripts/audio.gd" type="Script" id=19]
 [ext_resource path="res://audio/track3.wav" type="AudioStream" id=20]
 [ext_resource path="res://scripts/fallzone1.gd" type="Script" id=21]
 [ext_resource path="res://scripts/exit1.gd" type="Script" id=22]
+[ext_resource path="res://assets/walls_platforms/Parede_sombra.png" type="Texture" id=23]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -74,7 +71,7 @@ tracks/3/keys = {
 "values": [ "res://.import/frame0000.png-254422a81f2716c6657203ffb7353857.stex" ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "luz"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
@@ -113,7 +110,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "luz_walking"
 length = 0.6
 loop = true
@@ -194,7 +191,7 @@ tracks/2/keys = {
 "values": [ 1 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "sombra_walking"
 length = 0.6
 loop = true
@@ -235,29 +232,36 @@ tracks/2/keys = {
 "values": [ 0, 0, 0 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=9]
+[sub_resource type="CapsuleShape2D" id=6]
 radius = 16.0
 height = 76.0
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 168.5, 35.25 )
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 1127.5, 31.5 )
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 64, 8 )
-
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 17, 442.5 )
 
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 32, 8 )
+
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 368, 26.5 )
+extents = Vector2( 32, 7.125 )
 
-[sub_resource type="RectangleShape2D" id=13]
-extents = Vector2( 30.5, 61 )
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 32, 8 )
 
-[node name="Level_1" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 33.5, 8 )
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 32.0
+height = 32.0
+
+[node name="Level_L1" type="Node2D"]
 
 [node name="alma" type="KinematicBody2D" parent="."]
-position = Vector2( -208, -528 )
+position = Vector2( -224, 0 )
 z_index = 1
 collision_mask = 6
 script = ExtResource( 2 )
@@ -282,17 +286,17 @@ cast_to = Vector2( 0, 10 )
 collision_mask = 4
 
 [node name="animation" type="AnimationPlayer" parent="alma"]
-anims/RESET = SubResource( 2 )
-anims/luz = SubResource( 3 )
-anims/luz_walking = SubResource( 7 )
+anims/RESET = SubResource( 1 )
+anims/luz = SubResource( 2 )
+anims/luz_walking = SubResource( 3 )
 anims/sombra = SubResource( 4 )
-anims/sombra_walking = SubResource( 8 )
+anims/sombra_walking = SubResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="alma"]
 position = Vector2( 288, 448 )
-shape = SubResource( 9 )
+shape = SubResource( 6 )
 
-[node name="movement sound" type="AudioStreamPlayer2D" parent="alma"]
+[node name="movement sound" type="AudioStreamPlayer" parent="alma"]
 stream = ExtResource( 18 )
 volume_db = -5.0
 
@@ -322,141 +326,89 @@ texture = ExtResource( 5 )
 centered = false
 offset = Vector2( 0, -260 )
 
-[node name="trees2" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_scale = Vector2( 0.6, 1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees2"]
-position = Vector2( 0, 3.75559 )
-scale = Vector2( 1.00313, 1.01341 )
-texture = ExtResource( 9 )
-centered = false
-offset = Vector2( 0, -260 )
-
-[node name="trees3" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_scale = Vector2( 0.9, 1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/trees3"]
-position = Vector2( 0, 3.75559 )
-scale = Vector2( 1.00313, 1.01341 )
-texture = ExtResource( 8 )
-centered = false
-offset = Vector2( 0, -260 )
-
-[node name="grass1" type="ParallaxLayer" parent="ParallaxBackground"]
-scale = Vector2( 1.1, 1.1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/grass1"]
-position = Vector2( 0, 3.75559 )
-scale = Vector2( 1.00313, 1.01341 )
-texture = ExtResource( 7 )
-centered = false
-offset = Vector2( 0, -260 )
-region_enabled = true
-region_rect = Rect2( 0, 0, 300, 790 )
-
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
-layer = 1
-
-[node name="grass2" type="ParallaxLayer" parent="ParallaxBackground2"]
-scale = Vector2( 1.1, 1.1 )
-motion_scale = Vector2( 3, 1 )
-motion_mirroring = Vector2( 1024, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground2/grass2"]
-position = Vector2( 0, 3.75559 )
-scale = Vector2( 1.00313, 1.01341 )
-texture = ExtResource( 3 )
-centered = false
-offset = Vector2( 0, -260 )
+[node name="Camera2D" type="Camera2D" parent="alma"]
+position = Vector2( 287, 447 )
+limit_left = 0
+limit_right = 100000000
+limit_bottom = 600
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 0.3
+drag_margin_top = 0.3
+drag_margin_right = 0.3
+editor_draw_limits = true
+editor_draw_drag_margin = true
 
 [node name="floor" type="StaticBody2D" parent="."]
 collision_layer = 4
 
 [node name="floor" type="CollisionShape2D" parent="floor"]
-position = Vector2( 167.5, 563.25 )
-shape = SubResource( 1 )
+position = Vector2( 1126.5, 567 )
+shape = SubResource( 7 )
 
-[node name="luz_platforms" type="Node2D" parent="."]
-position = Vector2( -64, 0 )
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -17, 156 )
 
-[node name="platL3" type="StaticBody2D" parent="luz_platforms"]
-position = Vector2( 496, -256 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 8 )
+
+[node name="WallLuz" type="Node2D" parent="."]
+
+[node name="Wall1" type="StaticBody2D" parent="WallLuz"]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL3"]
-position = Vector2( 400, 456 )
-shape = SubResource( 10 )
+[node name="ParedeLuz" type="Sprite" parent="WallLuz/Wall1"]
+position = Vector2( 288, 488 )
+scale = Vector2( 1, 0.625 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLuz/Wall1"]
+position = Vector2( 288, 456 )
+shape = SubResource( 9 )
 one_way_collision = true
 
-[node name="Sprite" type="Sprite" parent="luz_platforms/platL3"]
-position = Vector2( 400, 464 )
+[node name="wall2" type="StaticBody2D" parent="WallLuz"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallLuz/wall2"]
+position = Vector2( 672, 360.875 )
+shape = SubResource( 12 )
+one_way_collision = true
+
+[node name="ParedeLuz" type="Sprite" parent="WallLuz/wall2"]
+position = Vector2( 672, 440 )
+scale = Vector2( 1, 1.375 )
+texture = ExtResource( 3 )
+
+[node name="WallNeutra" type="Node2D" parent="."]
+position = Vector2( 488, 340.25 )
+
+[node name="Wall1" type="StaticBody2D" parent="WallNeutra"]
+position = Vector2( -488, -340.25 )
+collision_layer = 4
+
+[node name="ParedeNeutra" type="Sprite" parent="WallNeutra/Wall1"]
+position = Vector2( 544, 424 )
+scale = Vector2( 1, 1.625 )
 texture = ExtResource( 16 )
 
-[node name="platL2" type="StaticBody2D" parent="luz_platforms"]
-position = Vector2( 240, -128 )
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL2"]
-position = Vector2( 400, 456 )
-shape = SubResource( 10 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallNeutra/Wall1"]
+position = Vector2( 544, 328 )
+shape = SubResource( 11 )
 one_way_collision = true
 
-[node name="Sprite" type="Sprite" parent="luz_platforms/platL2"]
-position = Vector2( 400, 464 )
-texture = ExtResource( 16 )
+[node name="WallSombra" type="Node2D" parent="."]
 
-[node name="platL1" type="StaticBody2D" parent="luz_platforms"]
-position = Vector2( -16, 0 )
+[node name="Wall1" type="StaticBody2D" parent="WallSombra"]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="luz_platforms/platL1"]
-position = Vector2( 400, 456 )
-shape = SubResource( 10 )
-one_way_collision = true
+[node name="ParedeSombra" type="Sprite" parent="WallSombra/Wall1"]
+position = Vector2( 414.5, 456 )
+scale = Vector2( 1.04688, 1.125 )
+texture = ExtResource( 19 )
 
-[node name="Sprite" type="Sprite" parent="luz_platforms/platL1"]
-position = Vector2( 400, 464 )
-texture = ExtResource( 16 )
-
-[node name="sombra_platforms" type="Node2D" parent="."]
-position = Vector2( -64, 0 )
-
-[node name="plat1" type="StaticBody2D" parent="sombra_platforms"]
-position = Vector2( 112, -64 )
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat1"]
-position = Vector2( 400, 456 )
-shape = SubResource( 10 )
-one_way_collision = true
-
-[node name="Sprite" type="Sprite" parent="sombra_platforms/plat1"]
-position = Vector2( 400, 464 )
-texture = ExtResource( 17 )
-
-[node name="plat2" type="StaticBody2D" parent="sombra_platforms"]
-position = Vector2( 624, -320 )
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat2"]
-position = Vector2( 400, 456 )
-shape = SubResource( 10 )
-one_way_collision = true
-
-[node name="Sprite" type="Sprite" parent="sombra_platforms/plat2"]
-position = Vector2( 400, 464 )
-texture = ExtResource( 17 )
-
-[node name="plat3" type="StaticBody2D" parent="sombra_platforms"]
-collision_layer = 4
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="sombra_platforms/plat3"]
-position = Vector2( 768, 264 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallSombra/Wall1"]
+position = Vector2( 414.5, 392 )
 shape = SubResource( 10 )
 one_way_collision = true
 
@@ -486,12 +438,22 @@ script = ExtResource( 21 )
 position = Vector2( 144, 960 )
 shape = SubResource( 12 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Porta" type="Area2D" parent="."]
+position = Vector2( 672, 320 )
 script = ExtResource( 22 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1041.5, 64 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta"]
+position = Vector2( 128, -16 )
 shape = SubResource( 13 )
 
-[connection signal="body_shape_entered" from="fallzone" to="fallzone" method="_on_fallzone_body_shape_entered"]
-[connection signal="body_shape_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_shape_entered"]
+[node name="Sprite" type="Sprite" parent="Porta"]
+position = Vector2( 128, -16 )
+scale = Vector2( 0.581818, 0.6 )
+texture = ExtResource( 17 )
+
+[node name="Sprite" type="Sprite" parent="."]
+z_index = -100
+texture = ExtResource( 5 )
+centered = false
+
+[connection signal="body_shape_entered" from="Porta" to="Porta" method="_on_Porta_body_shape_entered"]
