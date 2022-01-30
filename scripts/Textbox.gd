@@ -25,7 +25,7 @@ func _ready():
 	queue_text("This is the story of Alma.")
 	queue_text("Alma: 'Oh, where am I? Why am I shining?'")	
 	queue_text("You can press <space> to change form")
-	queue_text("Alma: '...?'")
+	queue_text("Alma: '..?'")
 
 func _process(delta):
 	match current_state:

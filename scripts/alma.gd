@@ -37,10 +37,6 @@ func _physics_process(delta):
 	
 	_set_animation()
 		
-	
-#	if Input.is_action_pressed("debug"):
-#		get_node(sombra_platforms/Area2D/CollisionShape2D).disabled = true
-		
 
 func _get_input():
 	var move_direction = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
@@ -102,9 +98,3 @@ func _switch_type():
 			mode = "sombra"
 				
 	
-
-
-
-
-func _on_fallZone_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
-	pass # Replace with function body.
